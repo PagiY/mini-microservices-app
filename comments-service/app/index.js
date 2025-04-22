@@ -1,10 +1,12 @@
 const express = require("express");
+const cors = require('cors');
 // for generating random id
 const { randomBytes } = require("crypto");
 
 // create an express app
 const app = express();
 app.use(express.json());
+app.use(cors());
 
 const commentsByPostId = {};
 
