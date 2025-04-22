@@ -4,6 +4,7 @@ const { randomBytes } = require("crypto");
 
 // create an express app
 const app = express();
+app.use(express.json());
 
 const commentsByPostId = {};
 
@@ -23,6 +24,7 @@ app.post('/post/:id/comment', (req, res) => {
   res.status(201).send(commentsByPostId);
 });
 
+// listen to port 4001 since port 4000 is taken by posts-service
 app.listen(4001, () => {
   console.log("Listening on PORT 4001")
 });
